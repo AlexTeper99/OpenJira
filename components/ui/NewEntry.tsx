@@ -9,13 +9,16 @@ import { UIContext } from '../../context/ui';
 
 export const NewEntry = () => {
     
+    //esto antes lo habia hecho directamente aca con useState pero ahora lo puse en el context.
     const { addNewEntry } = useContext(EntriesContext);
-    const { isAddingEntry, setIsAddingEntry } = useContext( UIContext);
-
+    const { isAddingEntry, setIsAddingEntry } = useContext( UIContext); 
 
     const [inputValue, setInputValue] = useState('');
     const [touched, setTouched] = useState(false);
 
+    //cuando escribo el texto en la tarjeta cambio el input.
+    //Si no hago esto de actualizar el componente con su estado entonces 
+    //no podria ver que estoy escribiendo
     const onTextFieldChanged = ( event: ChangeEvent<HTMLInputElement> ) => {
         setInputValue( event.target.value );
     }
