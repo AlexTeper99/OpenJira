@@ -23,14 +23,15 @@ export const NewEntry = () => {
         setInputValue( event.target.value );
     }
 
+    //al tocar el boton guardar ejecuto todo lo necesario para crear una nueva entrada
     const onSave = () => {
 
         if ( inputValue.length === 0 ) return;
 
         addNewEntry( inputValue );
-        setIsAddingEntry( false );
+        setIsAddingEntry( false ); //sirve para cancelar el newentry
         setTouched( false );
-        setInputValue('');
+        setInputValue(''); 
 
     }
 
@@ -53,8 +54,9 @@ export const NewEntry = () => {
                         error={ inputValue.length <= 0 && touched }
                         value={ inputValue }
                         onChange={ onTextFieldChanged }
-                        onBlur={ () => setTouched( true ) }
+                        onBlur={ () => setTouched( true ) } 
                     />
+                     {/*onBlur es cuando pierde el foco/saco el cursor, actualiza el estado de touch para lanzar el error y el helper text */}
 
                     <Box display='flex' justifyContent='space-between'>
 

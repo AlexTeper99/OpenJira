@@ -1,7 +1,7 @@
 import { EntriesState } from './';
 import { Entry } from '../../interfaces';
 
-
+//
 type EntriesActionType = 
    | { type: '[Entry] Add-Entry', payload: Entry  } 
    | { type: '[Entry] Entry-Updated', payload: Entry  } 
@@ -13,7 +13,7 @@ export const entriesReducer = ( state: EntriesState, action: EntriesActionType )
       case '[Entry] Add-Entry':
          return {
             ...state,
-            entries: [ ...state.entries, action.payload ]
+            entries: [ ...state.entries, action.payload ]//actualizo del stor las entries con el nuevo Entry recibido por payload
           }
 
       case '[Entry] Entry-Updated':

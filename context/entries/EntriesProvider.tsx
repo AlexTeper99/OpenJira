@@ -38,6 +38,7 @@ export const EntriesProvider:FC = ({ children }) => {
 
     const [state, dispatch] = useReducer( entriesReducer , Entries_INITIAL_STATE );
 
+    //defino las funciones en el provider que van a llamar a las acciones del reducer
     const addNewEntry = ( description: string ) => {
 
         const newEntry: Entry = {
