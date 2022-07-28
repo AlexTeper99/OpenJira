@@ -1,4 +1,4 @@
-import { FC, useReducer } from 'react';
+import { FC, useReducer, PropsWithChildren } from 'react';
 import { UIContext, uiReducer } from './';
 
 export interface UIState {
@@ -15,7 +15,7 @@ const UI_INITIAL_STATE: UIState = {
 }
 
 
-export const UIProvider:FC = ({ children }) => {
+export const UIProvider:FC<PropsWithChildren> = ({ children }) => {
 
     const [state, dispatch] = useReducer( uiReducer, UI_INITIAL_STATE );
 
